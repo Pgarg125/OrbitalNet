@@ -1,0 +1,11 @@
+# OrbitalNet dependencies
+# NOTE: for a much smaller/faster CPU-only install of torch, see README.md
+# "Setup" step 3 -- it explains the recommended install command instead of
+# just `pip install -r requirements.txt`.
+
+numpy>=1.24
+scipy>=1.10
+torch>=2.3
+matplotlib>=3.7
+plotly>=5.15
+streamlit>=1.28

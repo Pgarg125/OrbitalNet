@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated project artifacts (recreate with the scripts in scripts/)
+data/*.npz
+models/*.pt
+models/*.npz
+models/*.json
+results/*.png
+results/*.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Web app (frontend/.gitignore also covers these; kept here as a backstop)
+web/frontend/node_modules/
+web/frontend/dist/
+
+# OS / editor
+.DS_Store
+.vscode/settings.json

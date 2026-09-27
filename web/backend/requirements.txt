@@ -1,0 +1,4 @@
+# Additional dependencies for the FastAPI backend (on top of the main
+# project's requirements.txt, which provides torch/numpy/scipy).
+fastapi>=0.110
+uvicorn[standard]>=0.29
