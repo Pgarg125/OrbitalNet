@@ -2,9 +2,6 @@
 
 **Predicting Planetary Trajectories Using Physics-Informed Neural Networks**
 
-Team: Pushkar Garg, Shanmukha Vamsi Divi, Md Sufiyan Siddique
-Dept. of CSE – Artificial Intelligence, Maharaja Agrasen Institute of Technology (MAIT), New Delhi
-
 A Physics-Informed Neural Network (PINN) that predicts two-body orbital trajectories by
 embedding Newton's law of gravitation directly into its training loss via automatic
 differentiation, benchmarked against a standard MLP baseline on accuracy, data efficiency,
@@ -55,7 +52,7 @@ OrbitalNet/
                 └── MetricsPanel.jsx    MSE/MAE display
 ```
 
-## 2. Design decisions worth knowing for your viva
+## 2. Design decisions worth knowing
 
 The synopsis specifies a strict **5-input** network (`x0, y0, vx0, vy0, t`). Two decisions were
 made to implement this precisely and defensibly:
