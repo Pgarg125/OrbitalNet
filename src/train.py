@@ -108,6 +108,7 @@ def train_model(
                 loss = data_loss(pred, yb)
                 l_data, l_phys = loss.item(), 0.0
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
             optimizer.step()
             last_loss, last_l_data, last_l_phys = loss.item(), l_data, l_phys
 

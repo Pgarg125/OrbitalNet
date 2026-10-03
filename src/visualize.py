@@ -73,3 +73,23 @@ def plot_trajectory_plotly(true_traj, pred_traj, title: str = "Orbit: predicted 
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     )
     return fig
+
+def plot_data_efficiency(fractions, pinn_mse, baseline_mse, title: str = "Data efficiency: test MSE vs. training-data fraction", save_path: str | None = None):
+    """
+    fractions: list of training-data fractions used (e.g. [1.0, 0.6, 0.4, 0.2]).
+    pinn_mse / baseline_mse: matching lists of each model's test MSE at that fraction.
+    """
+    fig, ax = plt.subplots(figsize=(7, 5))
+    ax.plot(fractions, pinn_mse, "o-", label="PINN", linewidth=2, markersize=7)
+    ax.plot(fractions, baseline_mse, "s-", label="Baseline MLP", linewidth=2, markersize=7)
+    ax.set_xlabel("Fraction of training data used")
+    ax.set_ylabel("Test MSE (log scale)")
+    ax.set_yscale("log")
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(alpha=0.3)
+    ax.invert_xaxis()  # so the chart reads left-to-right as "less data -->"
+    fig.tight_layout()
+    if save_path:
+        fig.savefig(save_path, dpi=150, bbox_inches="tight")
+    return fig
